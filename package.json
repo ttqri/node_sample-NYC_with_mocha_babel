@@ -5,18 +5,44 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/index.js",
-    "test": "mocha --require @babel/register 'src/**/*spec.js'"
+    "test": "mocha 'src/**/*spec.js'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "nyc": {
+    "require": [
+      "@babel/register"
+    ],
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "include": [
+      "src/**"
+    ],
+    "exclude": [
+      "src/*spec.js"
+    ],
+    "extension": [
+      ".js",
+      ".mjs"
+    ],
+    "all": true,
+    "instrument": false,
+    "sourceMaps": false,
+    "cache": false
+  },
   "devDependencies": {
     "@babel/core": "^7.4.4",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.4",
     "@babel/register": "^7.4.4",
+    "babel-plugin-istanbul": "^5.2.0",
     "chai": "^4.2.0",
+    "istanbul": "^0.4.5",
     "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "nodemon": "^1.19.0"
   },
   "dependencies": {

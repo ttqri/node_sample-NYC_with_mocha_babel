@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import { spy } from 'sinon';
 
-import callMyFunction from './callMyFunction.js';
+import { callMyFunction } from './callMyFunction.js';
 
 describe('callMyFunction function', () => {
   it('calls the passed function', () => {
